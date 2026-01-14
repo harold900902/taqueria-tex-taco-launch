@@ -1,88 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Taqueria Tex-Taco Design System
+   Brand colors from logo: Navy Blue, Red, White (Texas flag)
+   Accent: Fresh cilantro green for food appeal
 */
 
 @layer base {
   :root {
+    /* Navy blue from logo */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 215 50% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Card/surfaces - warm cream tint */
+    --card: 40 30% 98%;
+    --card-foreground: 215 50% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 215 50% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary: Deep navy blue from logo */
+    --primary: 215 65% 25%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary: Vibrant Texas red from logo */
+    --secondary: 0 75% 50%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted: Warm gray */
+    --muted: 30 10% 94%;
+    --muted-foreground: 215 20% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent: Fresh cilantro green */
+    --accent: 145 60% 35%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Borders */
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 215 65% 25%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
+    /* Custom taqueria colors */
+    --warm-cream: 40 40% 96%;
+    --salsa-red: 0 75% 50%;
+    --cilantro-green: 145 60% 35%;
+    --texas-blue: 215 65% 25%;
+    --texas-red: 0 70% 45%;
+    --charcoal: 215 50% 15%;
+    --gold-badge: 45 90% 50%;
+
+    /* Gradients */
+    --hero-gradient: linear-gradient(135deg, hsl(215 65% 25% / 0.92) 0%, hsl(0 75% 50% / 0.85) 100%);
+    --cta-gradient: linear-gradient(135deg, hsl(0 75% 50%) 0%, hsl(0 70% 40%) 100%);
+    --badge-gradient: linear-gradient(135deg, hsl(45 90% 50%) 0%, hsl(35 90% 45%) 100%);
+
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsl(215 50% 15% / 0.1);
+    --shadow-elevated: 0 12px 40px -8px hsl(215 50% 15% / 0.15);
+    --shadow-cta: 0 8px 30px -6px hsl(0 75% 50% / 0.4);
+
+    /* Sidebar defaults */
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --background: 215 50% 8%;
+    --foreground: 40 30% 95%;
+    --card: 215 45% 12%;
+    --card-foreground: 40 30% 95%;
+    --popover: 215 45% 12%;
+    --popover-foreground: 40 30% 95%;
+    --primary: 40 30% 95%;
+    --primary-foreground: 215 50% 8%;
+    --secondary: 0 70% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 215 40% 18%;
+    --muted-foreground: 40 20% 65%;
+    --accent: 145 55% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 215 40% 20%;
+    --input: 215 40% 20%;
+    --ring: 40 30% 80%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +116,145 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero section styling */
+  .hero-overlay {
+    background: var(--hero-gradient);
+  }
+
+  /* CTA button glow effect */
+  .cta-glow {
+    box-shadow: var(--shadow-cta);
+    transition: all 0.3s ease;
+  }
+
+  .cta-glow:hover {
+    box-shadow: 0 12px 40px -6px hsl(0 75% 50% / 0.5);
+    transform: translateY(-2px);
+  }
+
+  /* Badge styling */
+  .badge-popular {
+    background: var(--badge-gradient);
+    color: hsl(var(--charcoal));
+    font-weight: 600;
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* Section fade animations */
+  .fade-in-section {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  .fade-in-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Floating CTA for mobile */
+  .floating-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: linear-gradient(to top, hsl(var(--background)) 90%, transparent);
+    padding: 1rem 1rem 1.5rem;
+  }
+
+  /* Menu tab styling */
+  .menu-tab {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .menu-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: hsl(var(--secondary));
+    border-radius: 2px;
+  }
+
+  /* Trust badge */
+  .trust-badge {
+    background: hsl(var(--gold-badge) / 0.15);
+    border: 1px solid hsl(var(--gold-badge) / 0.3);
+  }
+
+  /* Image overlay for food photos */
+  .food-image-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .food-image-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, hsl(var(--charcoal) / 0.6) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Testimonial card */
+  .testimonial-card {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    transition: all 0.3s ease;
+  }
+
+  .testimonial-card:hover {
+    border-color: hsl(var(--secondary) / 0.3);
+    box-shadow: var(--shadow-soft);
+  }
+
+  /* Star rating */
+  .star-filled {
+    color: hsl(var(--gold-badge));
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--texas-red)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-warm-cream {
+    background-color: hsl(var(--warm-cream));
+  }
+
+  .text-balance {
+    text-wrap: balance;
   }
 }
